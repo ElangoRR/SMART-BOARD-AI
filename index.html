@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMART BOARD AI - Real-Time Voice to Image</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Left Column: Controls & Data -->
+        <div class="left-panel">
+            <header>
+                <div class="logo">
+                    <span class="logo-icon">🎙️</span>
+                    <h1>SMART BOARD <span class="highlight">AI</span></h1>
+                </div>
+                <p class="subtitle">Real-Time Voice to Keywords to Image Viewer</p>
+            </header>
+
+            <div class="controls">
+                <button id="toggle-mic" class="btn-neon">
+                    <span class="icon">▶</span> Start Listening
+                </button>
+                
+                <!-- Quick Demo / Text Input Bar -->
+                <div class="manual-input-box">
+                    <input type="text" id="manual-input" placeholder="Or type topic / sentence here..." class="input-field" />
+                    <button id="btn-manual-submit" class="btn-action" title="Process text">⚡</button>
+                </div>
+
+                <!-- New Waveform Visualizer -->
+                <div class="waveform-container" id="waveform-visualizer">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+
+                <div class="status-indicator">
+                    <span id="status-dot" class="dot"></span>
+                    <span id="status-text">Ready</span>
+                </div>
+            </div>
+
+            <div class="panel-section">
+                <h2><span class="section-icon">📝</span> Live Transcription</h2>
+                <div id="transcript-box" class="glass-box scrollable">
+                    <p class="placeholder">Speak clearly to see text here...</p>
+                </div>
+            </div>
+
+            <div class="panel-section">
+                <h2><span class="section-icon">🔑</span> Detected Keywords</h2>
+                <div id="keywords-container" class="tags-container">
+                    <!-- Keywords will appear here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Column: Image Display -->
+        <div class="right-panel">
+            <div class="image-viewer" id="image-viewer">
+                <div class="image-overlay">
+                    <h2 id="current-topic">Waiting for topic...</h2>
+                    <div class="loading-bar" id="loading-bar"></div>
+                </div>
+                <img id="main-image" src="" alt="Visual content" style="display: none;">
+                <div id="placeholder-art" class="placeholder-art">
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                    <p>Visuals will appear here</p>
+                </div>
+            </div>
+            <div class="image-source" id="image-source">Source: AI / Web Search</div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
