@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: smart-board-ai
+    runtime: python
+    buildCommand: pip install --upgrade pip && pip install -r requirements.txt && python -m spacy download en_core_web_sm
+    startCommand: gunicorn app:app -b 0.0.0.0:$PORT -w 2 --timeout 120
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.10
+      - key: FLASK_ENV
+        value: production
